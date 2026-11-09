@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f6fb;
+  --surface: #ffffff;
+  --foreground: #1c1830;
+  --muted: #6b6680;
+  --border: #e4e1ee;
+  --brand: #3b2a7a;
+  --brand-fg: #ffffff;
+  --brand-soft: #ece8f8;
+  --accent: #e0a526;
+  --danger: #b42318;
+  --danger-soft: #fdecea;
+  --success: #067647;
+  --success-soft: #e6f6ee;
+  --warning: #9a6700;
+  --warning-soft: #fff4d6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --background: #121019;
+    --surface: #1b1826;
+    --foreground: #ece9f5;
+    --muted: #a39fb5;
+    --border: #2e2a3d;
+    --brand: #a996f0;
+    --brand-fg: #15121f;
+    --brand-soft: #2a2442;
+    --danger: #f97066;
+    --danger-soft: #3a1a1a;
+    --success: #47cd89;
+    --success-soft: #133024;
+    --warning: #fdb022;
+    --warning-soft: #33280f;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-brand: var(--brand);
+  --color-brand-fg: var(--brand-fg);
+  --color-brand-soft: var(--brand-soft);
+  --color-accent: var(--accent);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+input, select, textarea {
+  color: inherit;
+}
