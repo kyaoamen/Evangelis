@@ -1,0 +1,28 @@
+# Supabase CLI project config (supabase init + supabase start for local dev).
+project_id = "church-platform"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "storage"]
+
+[db]
+port = 54322
+major_version = 17
+
+[db.seed]
+enabled = true
+sql_paths = ["./seed.sql"]
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["http://localhost:3000/auth/callback", "io.churchplatform.app://login-callback"]
+
+[auth.email]
+enable_signup = true
+enable_confirmations = false
+otp_length = 6
+
+[functions.send-announcement-push]
+verify_jwt = true
