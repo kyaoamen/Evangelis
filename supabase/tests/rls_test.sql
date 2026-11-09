@@ -162,6 +162,34 @@ select t.fails($$ insert into storage.objects (bucket_id, name) values ('church-
 insert into storage.objects (bucket_id, name) values ('church-media', current_setting('t.church2') || '/logo.png');
 select t.ok(true, 'staff can upload into own church folder');
 
+-- ---------------------------------------------------------------- verification
+:as_other
+select t.fails($$ select public.submit_church_for_review(current_setting('t.church2')::uuid) $$, 'submit needs all 5 documents');
+insert into public.church_documents (church_id, type, storage_path, file_name)
+select current_setting('t.church2')::uuid, t, current_setting('t.church2') || '/' || t || '.pdf', t || '.pdf'
+  from unnest(enum_range(null::public.church_document_type)) t;
+select public.submit_church_for_review(current_setting('t.church2')::uuid);
+select t.ok((select submitted_for_review_at is not null from public.churches where id = current_setting('t.church2')::uuid), 'church submitted for review');
+select t.fails($$ update public.churches set review_note = 'ok' where id = current_setting('t.church2')::uuid $$, 'church cannot write its own review note');
+:as_alice
+select t.ok((select count(*) from public.church_documents) = 0, 'other churches cannot see verification documents');
+select t.fails($$ select public.review_church(current_setting('t.church2')::uuid, true) $$, 'only platform admins review');
+:as_pa
+select t.ok((select count(*) from public.church_review_queue) = 1, 'church appears in review queue');
+select t.fails($$ select public.review_church(current_setting('t.church2')::uuid, false) $$, 'rejection needs a note');
+select public.review_church_document((select id from public.church_documents where type = 'leader_id'), false, 'Pièce illisible');
+select public.review_church(current_setting('t.church2')::uuid, false, 'Merci de renvoyer une pièce lisible');
+:as_other
+select t.ok((select review_note from public.churches where id = current_setting('t.church2')::uuid) like 'Merci%', 'church sees rejection note');
+select t.fails($$ select public.submit_church_for_review(current_setting('t.church2')::uuid) $$, 'rejected document must be replaced');
+update public.church_documents set status = 'submitted', file_name = 'id-v2.pdf' where type = 'leader_id';
+select public.submit_church_for_review(current_setting('t.church2')::uuid);
+:as_pa
+select public.review_church(current_setting('t.church2')::uuid, true);
+select t.ok((select status from public.churches where id = current_setting('t.church2')::uuid) = 'active', 'approved church is active');
+:as_other
+select t.fails($$ insert into storage.objects (bucket_id, name) values ('church-documents', current_setting('t.church2') || '/late.pdf') $$, 'no document uploads once active');
+
 -- ---------------------------------------------------------------- verse + GDPR
 :as_anon
 select t.ok((select reference from public.verse_of_day(null, 'LSG1910', date '2026-01-01')) = 'Jean 3:16', 'verse of the day rotation (fr)');
