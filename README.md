@@ -18,7 +18,7 @@ Members can join a church, register for events (QR ticket), read announcements a
 ## Set up the backend (Supabase)
 
 1. Create a Supabase project in an EU region.
-2. Apply the migrations in `supabase/migrations/` in order (`supabase db push` with the Supabase CLI, or paste them in the SQL editor), then optionally `supabase/seed.sql`.
+2. Open SQL Editor → New query, paste the whole of `supabase/pilot_setup.sql` and click Run (or use `supabase db push` with the CLI). `supabase/seed.sql` adds a demo church for testing only.
 3. Authentication → Email templates → "Magic Link": include `{{ .Token }}` so people receive the 6-digit code.
 4. Authentication → URL configuration: set the Site URL to the deployed back-office address.
 5. Make yourself platform admin: `insert into platform_admins (user_id) select id from auth.users where email = 'you@example.com';`
