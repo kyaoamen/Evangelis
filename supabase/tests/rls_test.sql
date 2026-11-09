@@ -190,6 +190,19 @@ select t.ok((select status from public.churches where id = current_setting('t.ch
 :as_other
 select t.fails($$ insert into storage.objects (bucket_id, name) values ('church-documents', current_setting('t.church2') || '/late.pdf') $$, 'no document uploads once active');
 
+-- ---------------------------------------------------------------- feedback
+:as_alice
+insert into public.feedback (church_id, user_id, kind, message, platform)
+values (current_setting('t.church')::uuid, auth.uid(), 'bug', 'Le bouton ne marche pas', 'android');
+select t.fails($$ insert into public.feedback (user_id, message) values ('a0000000-0000-0000-0000-000000000003', 'spoof') $$, 'cannot send feedback as someone else');
+:as_bob
+select t.ok((select count(*) from public.feedback) = 0, 'others cannot read feedback');
+:as_owner
+select t.ok((select count(*) from public.feedback) = 1, 'church owner reads church feedback');
+:as_pa
+update public.feedback set status = 'planned';
+select t.ok((select status from public.feedback limit 1) = 'planned', 'platform admin triages feedback');
+
 -- ---------------------------------------------------------------- verse + GDPR
 :as_anon
 select t.ok((select reference from public.verse_of_day(null, 'LSG1910', date '2026-01-01')) = 'Jean 3:16', 'verse of the day rotation (fr)');

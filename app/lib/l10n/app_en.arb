@@ -1,0 +1,111 @@
+{
+  "@@locale": "en",
+  "appName": "Evangelis",
+  "findYourChurch": "Find your church",
+  "findYourChurchHint": "Church name or city",
+  "noChurchFound": "No church found",
+  "myChurches": "My churches",
+  "navHome": "Home",
+  "navEvents": "Events",
+  "navBible": "Bible",
+  "navNews": "News",
+  "navProfile": "Profile",
+  "verseOfDay": "Verse of the day",
+  "upcomingEvents": "Upcoming events",
+  "latestAnnouncements": "Latest announcements",
+  "seeAll": "See all",
+  "noEvents": "No upcoming events",
+  "noAnnouncements": "No announcements yet",
+  "allCategories": "All",
+  "searchEvents": "Search events",
+  "membersOnly": "Members only",
+  "register": "Register",
+  "registered": "Registration confirmed",
+  "waitlisted": "On the waiting list",
+  "cancelRegistration": "Cancel my registration",
+  "cancelRegistrationConfirm": "Do you really want to cancel your registration?",
+  "seats": "Seats",
+  "seatsLeft": "{count, plural, =0{Full} =1{1 seat left} other{{count} seats left}}",
+  "@seatsLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "registrationClosed": "Registration closed",
+  "showAtEntrance": "Show this code at the entrance",
+  "joinToRegister": "Join the church to register",
+  "joinChurch": "Join the church",
+  "joinPending": "Request sent. A leader will approve it.",
+  "joinConsent": "I agree that {church} keeps my member information. It reveals my religious affiliation and will only be used by the church.",
+  "@joinConsent": {
+    "placeholders": {
+      "church": {
+        "type": "String"
+      }
+    }
+  },
+  "inviteCode": "Invite code (optional)",
+  "inviteCodeRequired": "Invite code",
+  "member": "Member",
+  "pending": "Waiting for approval",
+  "signIn": "Sign in",
+  "signOut": "Sign out",
+  "email": "Email address",
+  "sendCode": "Send me a code",
+  "codeSentTo": "Code sent to {email}",
+  "@codeSentTo": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "verificationCode": "6-digit code",
+  "verify": "Verify",
+  "firstName": "First name",
+  "lastName": "Last name",
+  "phone": "Phone",
+  "save": "Save",
+  "saved": "Saved",
+  "language": "Language",
+  "aboutChurch": "About the church",
+  "contact": "Contact",
+  "switchChurch": "Switch church",
+  "leaveChurch": "Leave this church",
+  "myRegistrations": "My registrations",
+  "privacy": "Privacy",
+  "exportMyData": "Export my data",
+  "deleteMyData": "Delete my data",
+  "deleteMyDataConfirm": "Your registrations and memberships will be deleted. Continue?",
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "errorGeneric": "Something went wrong. Please try again.",
+  "retry": "Retry",
+  "bibleDownload": "Download the Bible to read offline",
+  "bibleDownloading": "Downloading…",
+  "bibleOffline": "Available offline",
+  "bibleBooks": "Books",
+  "chapter": "Chapter {n}",
+  "@chapter": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "visitorBanner": "You are visiting this church",
+  "dataExported": "Your data was copied",
+  "feedback": "Give feedback",
+  "feedbackTitle": "Help us improve Evangelis",
+  "feedbackBug": "Problem",
+  "feedbackIdea": "Idea",
+  "feedbackOther": "Other",
+  "feedbackHint": "Describe what went wrong or what you would like to see…",
+  "feedbackSend": "Send",
+  "feedbackThanks": "Thank you! Your feedback was sent.",
+  "feedbackSignIn": "Sign in to send feedback.",
+  "joinSignInHint": "Sign in with your email address to become a member. No password needed.",
+  "demoCodeHint": "Demo version: the code is 123456."
+}

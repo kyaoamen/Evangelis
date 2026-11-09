@@ -1,0 +1,111 @@
+{
+  "@@locale": "fr",
+  "appName": "Evangelis",
+  "findYourChurch": "Trouvez votre église",
+  "findYourChurchHint": "Nom de l'église ou ville",
+  "noChurchFound": "Aucune église trouvée",
+  "myChurches": "Mes églises",
+  "navHome": "Accueil",
+  "navEvents": "Événements",
+  "navBible": "Bible",
+  "navNews": "Annonces",
+  "navProfile": "Profil",
+  "verseOfDay": "Verset du jour",
+  "upcomingEvents": "Événements à venir",
+  "latestAnnouncements": "Dernières annonces",
+  "seeAll": "Voir tout",
+  "noEvents": "Aucun événement à venir",
+  "noAnnouncements": "Aucune annonce pour le moment",
+  "allCategories": "Tous",
+  "searchEvents": "Rechercher un événement",
+  "membersOnly": "Réservé aux membres",
+  "register": "S'inscrire",
+  "registered": "Inscription confirmée",
+  "waitlisted": "Sur liste d'attente",
+  "cancelRegistration": "Annuler mon inscription",
+  "cancelRegistrationConfirm": "Voulez-vous vraiment annuler votre inscription ?",
+  "seats": "Places",
+  "seatsLeft": "{count, plural, =0{Complet} =1{1 place restante} other{{count} places restantes}}",
+  "@seatsLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "registrationClosed": "Inscriptions fermées",
+  "showAtEntrance": "Présentez ce code à l'entrée",
+  "joinToRegister": "Rejoignez l'église pour vous inscrire",
+  "joinChurch": "Rejoindre l'église",
+  "joinPending": "Demande envoyée. Un responsable va la valider.",
+  "joinConsent": "J'accepte que {church} conserve mes informations de membre. Elles révèlent mon appartenance religieuse et ne seront utilisées que par l'église.",
+  "@joinConsent": {
+    "placeholders": {
+      "church": {
+        "type": "String"
+      }
+    }
+  },
+  "inviteCode": "Code d'invitation (facultatif)",
+  "inviteCodeRequired": "Code d'invitation",
+  "member": "Membre",
+  "pending": "En attente de validation",
+  "signIn": "Se connecter",
+  "signOut": "Se déconnecter",
+  "email": "Adresse e-mail",
+  "sendCode": "Recevoir un code",
+  "codeSentTo": "Code envoyé à {email}",
+  "@codeSentTo": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "verificationCode": "Code à 6 chiffres",
+  "verify": "Valider",
+  "firstName": "Prénom",
+  "lastName": "Nom",
+  "phone": "Téléphone",
+  "save": "Enregistrer",
+  "saved": "Enregistré",
+  "language": "Langue",
+  "aboutChurch": "À propos de l'église",
+  "contact": "Contact",
+  "switchChurch": "Changer d'église",
+  "leaveChurch": "Quitter cette église",
+  "myRegistrations": "Mes inscriptions",
+  "privacy": "Confidentialité",
+  "exportMyData": "Exporter mes données",
+  "deleteMyData": "Supprimer mes données",
+  "deleteMyDataConfirm": "Vos inscriptions et adhésions seront supprimées. Continuer ?",
+  "cancel": "Annuler",
+  "confirm": "Confirmer",
+  "errorGeneric": "Une erreur est survenue. Réessayez.",
+  "retry": "Réessayer",
+  "bibleDownload": "Télécharger la Bible pour la lire hors ligne",
+  "bibleDownloading": "Téléchargement…",
+  "bibleOffline": "Disponible hors ligne",
+  "bibleBooks": "Livres",
+  "chapter": "Chapitre {n}",
+  "@chapter": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "visitorBanner": "Vous visitez cette église",
+  "dataExported": "Vos données ont été copiées",
+  "feedback": "Donner mon avis",
+  "feedbackTitle": "Aidez-nous à améliorer Evangelis",
+  "feedbackBug": "Problème",
+  "feedbackIdea": "Idée",
+  "feedbackOther": "Autre",
+  "feedbackHint": "Décrivez ce qui ne va pas ou ce que vous aimeriez voir…",
+  "feedbackSend": "Envoyer",
+  "feedbackThanks": "Merci ! Votre avis a été envoyé.",
+  "feedbackSignIn": "Connectez-vous pour envoyer votre avis.",
+  "joinSignInHint": "Connectez-vous avec votre adresse e-mail pour devenir membre. Aucun mot de passe n'est nécessaire.",
+  "demoCodeHint": "Version de démonstration : le code est 123456."
+}
